@@ -30,7 +30,7 @@
             width: 100%;
             height: 100%;
             background: #f0f0f0;
-          
+            z-index: 2;
         }
 
         .fallback-link {
@@ -58,32 +58,32 @@
         }
 
         /* ✅ AMP will hide fallback content when ad loads successfully */
-        amp-ad:not([amp-notsupported]) > [fallback] {
+        amp-ad:not([amp-notsupported]) > div[fallback] {
             display: none;
         }
     </style>
 </head>
 <body>
     <div class="ad-container">
-    <amp-ad 
-    layout="fixed"
-    width="320"
-    height="250"
-    type="adsense"
-    data-ad-client="ca-pub-2844605054428765"
-    data-ad-slot="3864155281"
-    data-loading-strategy="prefer-viewability-over-views">
     
-    <!-- Fallback Content -->
-    <div fallback class="fallback-content">
-        <a href="https://play.google.com/store/apps/details?id=com.mudgames.ludowar" 
-           target="_blank" class="fallback-link">
-            <div>Play Ludo War Now!</div>
-            <div class="fallback-button">Download Game</div>
-        </a>
-    </div>
+        <amp-ad
+            layout="fixed"
+            width="320"
+            height="250"
+            type="adsense"
+            data-ad-client="ca-pub-2844605054428765"
+            data-ad-slot="3864155281">
+            
+            <!-- Fallback Content -->
+            <div fallback class="fallback-content">
+                <a href="https://play.google.com/store/apps/details?id=com.mudgames.ludowar" 
+                   target="_blank" class="fallback-link">
+                    <div>Play Ludo War Now!</div>
+                    <div class="fallback-button">Download Game</div>
+                </a>
+            </div>
 
-</amp-ad>
+        </amp-ad>
 
     </div>
 </body>
